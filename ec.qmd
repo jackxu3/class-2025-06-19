@@ -27,3 +27,15 @@ ggplot(connectedness, aes(x = population, y = connectedness)) +
   theme(plot.title = element_text(face = "bold"),
         panel.grid.minor = element_blank())
 ```
+
+```{r}
+#| echo: false
+#| warning: false
+ggplot(connectedness, aes(x = population)) +
+  geom_histogram() +  # Automatically calculates bins; better for log scales
+  scale_x_log10() +  # Set x-axis to logarithmic scale
+  labs(title = "Histogram of Population (Logarithmic Scale)",
+       x = "Log(Population)",
+       y = "Count") +
+  theme_minimal()
+```
